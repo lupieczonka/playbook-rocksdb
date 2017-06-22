@@ -1,6 +1,7 @@
 # playbook-rocksdb
-pre-task
+ pre-task
  - disable selinux
  - set ulimits soft,hard 1048575
-install
+
+ install
  - rocksdb
