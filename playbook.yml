@@ -1,6 +1,16 @@
 ---
 - hosts: localhost
   connection: local
+  pre_tasks:
+    - name: "disable selinux because poland cannot into selinux yet"
+      selinux:
+        state: "disabled"
+    - name: "remove pam limit for max opened files"
+      pam_limits:
+        domain: "*"
+        limit_type: "soft,hard"
+        limit_item: "nofile"
+        value: 1048575
   roles:
     - ansible-role-rocksdb
 
