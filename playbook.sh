@@ -1,6 +1,7 @@
 #!/bin/bash
 set -eux
 
+playbook_dir=$(pwd)
 working_dir=/opt/ansible-bootstrap
 venvdir=${VENV_DIR:-$working_dir/venv}
 
@@ -14,7 +15,7 @@ ANSIBLE_ROLES_PATH=$working_dir/roles \
 ansible-playbook \
 -i "localhost," \
 -c local \
-/opt/playbook.yml
+$playbook_dir/playbook.yml
 #-e 'ansible_python_interpreter=python' \
 
 
