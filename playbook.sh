@@ -1,7 +1,7 @@
 #!/bin/bash
 set -eux
 
-playbook_dir=$(pwd)
+playbook_dir=/opt/playbook-rocksdb
 working_dir=/opt/ansible-bootstrap
 venvdir=${VENV_DIR:-$working_dir/venv}
 
@@ -16,6 +16,7 @@ ansible-playbook \
 -i "localhost," \
 -c local \
 $playbook_dir/playbook.yml
+
 #-e 'ansible_python_interpreter=python' \
 
 
