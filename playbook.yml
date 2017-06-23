@@ -8,7 +8,7 @@
     - name: "remove pam limit for max opened files"
       pam_limits:
         domain: "*"
-        limit_type: "soft,hard"
+        limit_type: "-"
         limit_item: "nofile"
         value: 1048575
   roles:
