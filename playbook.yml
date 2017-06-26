@@ -1,5 +1,6 @@
 ---
 - hosts: localhost
+  strategy: debug
   connection: local
   pre_tasks:
     - name: "disable selinux because poland cannot into selinux yet"
